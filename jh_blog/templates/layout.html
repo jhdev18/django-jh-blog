@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title%}
+            Django app
+        {%endblock%}
+    </title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.25.13/dist/css/uikit.min.css" />
+</head>
+<body>
+    <nav class="uk-navbar-container">
+    <div class="uk-container">
+        <div uk-navbar>
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav">
+                    <li><a href="{%url 'home' %}">Home</a></li>
+                    <li><a href="{%url 'posts:index'%}">Posts</a></li>
+                    <li><a href="{%url 'sobre'%}">sobre</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </nav>
+
+    <main>
+        {%block content%}
+        {%endblock%}
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.25.13/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.25.13/dist/js/uikit-icons.min.js"></script>
+</body>
+</html>
