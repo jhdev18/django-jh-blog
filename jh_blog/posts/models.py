@@ -5,7 +5,7 @@ from django.db import models
 class Post(models.Model):
     titulo = models.CharField(max_length=75)
     texto = models.TextField()
-    sulg = models.SlugField()
+    slug = models.SlugField()
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

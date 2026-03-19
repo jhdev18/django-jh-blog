@@ -1,0 +1,15 @@
+{%extends 'layout.html'%}
+
+{%block title%}
+    {{post.titulo}}
+{%endblock%}
+
+{%block content%}
+    <div class="uk-container uk-flex uk-flex-middle uk-text-center uk-flex-center"> 
+    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-margin-left">
+        <h3 class="uk-card-title">{{post.titulo}}</h3>
+        <p>{{post.date}}</p>
+        <p>{{post.texto}}</p>
+    </div>
+    </div>
+{%endblock%}
