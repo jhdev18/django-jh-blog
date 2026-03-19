@@ -7,3 +7,6 @@ class Post(models.Model):
     texto = models.TextField()
     sulg = models.SlugField()
     date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.titulo

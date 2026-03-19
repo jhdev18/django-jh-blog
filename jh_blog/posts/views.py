@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from .models import Post
 
 # Create your views here.
 
 def lista_posts(request):
-    return render(request, 'posts/lista_posts.html')
+    posts = Post.objects.all().order_by('-date')
+    return render(request, 'posts/lista_posts.html', {'posts': posts})
