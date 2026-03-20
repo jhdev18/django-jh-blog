@@ -1,6 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 
 def registro(request):
-    return render(request, "users/registro_page.html")
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("posts:index")
+    else:
+        form = UserCreationForm()
+    return render(request, "users/registro_page.html", {"form": form})

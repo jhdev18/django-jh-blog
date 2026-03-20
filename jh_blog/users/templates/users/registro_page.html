@@ -6,4 +6,9 @@
 
 {%block content%}
     <h1>Registro de usúarios</h1>
+    <form action="{%url 'users:registro'%}" method="post">
+        {% csrf_token%}
+        {{form}}
+        <button type="submit" class="uk-button uk-button-default">Enviar</button>
+    </form>
 {%endblock%}
