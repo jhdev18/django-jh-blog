@@ -1,0 +1,14 @@
+{%extends 'layout.html'%}
+
+{%block title%}
+    Nova Postagem
+{%endblock%}
+
+{%block content%}
+    <h1>Nova Postagem<h1>
+    <form action="{%url 'posts:novo_post'%}" method="post"  enctype="multipart/form-data"> 
+        {%csrf_token%}
+        {{form}}
+        <button class="uk-button uk-button-default" type="submit">Enviar</button>
+    </form>
+{%endblock%}

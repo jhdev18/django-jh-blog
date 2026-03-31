@@ -20,7 +20,19 @@
                 <ul class="uk-navbar-nav">
                     <li><a href="{%url 'home' %}">Home</a></li>
                     <li><a href="{%url 'posts:index'%}">Posts</a></li>
-                    <li><a href="{%url 'users:registro'%}">Registrar</a></li>
+                    {%if user.is_authenticated%}
+                        <li><a href="{%url 'posts:novo_post'%}">Novo post</a></li>
+                        <li>
+                            <form action="{%url 'users:sair'%}" method="post">
+                                {%csrf_token%}
+                                <button class="uk-button uk-button-text">Sair</button>
+                            </form>
+                        </li>
+                    {%else%}
+                        <li><a href="{%url 'users:registro'%}">Registrar</a></li>
+                        <li><a href="{%url 'users:login'%}">Login</a></li>
+                    {%endif%}
+
                     <li><a href="{%url 'sobre'%}">sobre</a></li>
                 </ul>
             </div>
